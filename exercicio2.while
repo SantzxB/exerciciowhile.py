@@ -1,0 +1,20 @@
+import os
+
+os.system("cls||clear")
+
+soma = 0
+contador = 0
+
+while True:
+        numero = int(input(f"Digite um número (negativo para sair):  "))
+        if numero < 0:
+                break
+        
+        soma += numero
+        contador += 1
+
+if contador > 0:
+        media = soma / contador
+        print(f"Média: {media}")
+else:
+        print("Nenhum valor válido foi informado.")
