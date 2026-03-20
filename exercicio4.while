@@ -1,0 +1,47 @@
+total_salario = 0
+qtd = 0
+maior_idade = 0
+menor_idade = 0
+mulheres_5000 = 0
+
+while True:
+    print("\n1 - Adicionar pessoa")
+    print("2 - Exibir resultados")
+    print("3 - Sair")
+
+    op = input("Opção: ")
+
+    if op == "1":
+        idade = int(input("Idade: "))
+        sexo = input("Sexo (M/F): ").upper()
+        salario = float(input("Salário: "))
+
+        total_salario += salario
+        qtd += 1
+
+        if qtd == 1:
+            maior_idade = idade
+            menor_idade = idade
+        else:
+            if idade > maior_idade:
+                maior_idade = idade
+            if idade < menor_idade:
+                menor_idade = idade
+
+        if sexo == "F" and salario >= 5000:
+            mulheres_5000 += 1
+
+    elif op == "2":
+        if qtd == 0:
+            print("Nenhum dado cadastrado.")
+        else:
+            print(f"Média salarial: {total_salario / qtd:.2f}")
+            print(f"Maior idade: {maior_idade}")
+            print(f"Menor idade: {menor_idade}")
+            print(f"Mulheres com salário >= 5000: {mulheres_5000}")
+
+    elif op == "3":
+        break
+
+    else:
+        print("Opção inválida!")
