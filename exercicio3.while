@@ -1,0 +1,31 @@
+import os
+
+os.system ("cls||clear")
+
+soma = 0
+contador = 0
+pares = 0
+impares = 0
+while True:
+    numero = float(input("Digite um número:"))
+    if numero < 0:
+        break
+    soma += numero
+    contador +=1
+    
+
+    if numero % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+
+    mediap = pares / contador
+    media = numero / contador
+
+print()
+print(f"Quantidas de números pares: {pares} ")
+print(f"Quantidas de números impares: {impares}")
+print(f"Média de valores pares: {mediap}")
+print(f"Média Geral: {media}")
+
+
